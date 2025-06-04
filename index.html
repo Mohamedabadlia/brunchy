@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><style>
   .logo-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; /* هذا يجعل الصورة دائرية */
-    object-fit: cover;   /* يجعلها تملأ الدائرة بدون تشوه */
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
     margin: 0 auto 10px;
+
+    /* تأثيرات عند المرور */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .logo-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 </style><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
