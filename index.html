@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="en"><style>
+  .logo-container {
+    position: relative;
+    top: -100px;
+    text-align: center;
+    z-index: 10;
+  }
+
   .logo-image {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
-    margin: -100px auto 10px; /* هذا هو السطر الذي يرفع الصورة */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -88,7 +93,9 @@
       <div class="u-expanded-width u-grey-80 u-shape u-shape-rectangle u-shape-1"></div>
       <div class="u-image u-image-circle u-image-1" alt=""></div>
    <div style="text-align: center; margin-top: 30px;">
-<img src="logo.png" alt="Brunchy Logo" class="logo-image">
+<div class="logo-container">
+  <img src="logo.png" alt="Brunchy Logo" class="logo-image">
+</div>
   <h1 style="font-size: 32px; color: #4e54c8;">Brunchy</h1>
 </div>
       <p class="u-align-center u-text u-text-2">By Sabrinelle </p>
