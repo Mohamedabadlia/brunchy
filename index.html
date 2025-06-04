@@ -20,6 +20,30 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 </style><head>
+  ...
+  <style>
+    .logo-container {
+      position: relative;      /* ليمكننا تحريك اللوجو */
+      top: -100px;             /* رفع اللوجو للأعلى 100 بكسل - عدل الرقم حسب حاجتك */
+      text-align: center;      /* توسيط اللوجو */
+      z-index: 10;             /* لضمان ظهوره فوق العناصر الأخرى */
+    }
+
+    .logo-image {
+      width: 400px;            /* 3 أضعاف الحجم الأصلي 200px */
+      height: 400px;
+      border-radius: 50%;      /* يجعل الصورة دائرية */
+      object-fit: cover;       /* يحافظ على شكل الصورة داخل الدائرة */
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-image:hover {
+      transform: scale(1.05);  /* تكبير صغير عند المرور فوق اللوجو */
+    }
+  </style>
+  ...
+</head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Savor Flavor, Yummy Bites, Food Feast, Culinary Delight, Gourmet Fare, Tempting Menu, Flavorful Dishes, Sweets Galore, Delicious Food for Sale Here, Our Team, Our Customers">
