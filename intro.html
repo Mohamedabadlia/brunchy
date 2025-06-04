@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Intro Video</title>
   <style>
-    /* اجعل الفيديو يغطي كامل الشاشة */
     html, body {
       margin: 0; 
       padding: 0; 
@@ -20,7 +19,13 @@
   </style>
 </head>
 <body>
-  <!-- الفيديو: muted مهم للتشغيل التلقائي -->
+  <script>
+    // إذا سبق وشاهد المستخدم الفيديو، نوجهه مباشرة للصفحة الرئيسية
+    if (localStorage.getItem('introPlayed') === 'true') {
+      window.location.href = 'index.html';
+    }
+  </script>
+
   <video autoplay muted playsinline id="introVideo">
     <source src="intro.mp4" type="video/mp4" />
     متصفحك لا يدعم عرض الفيديو.
@@ -29,9 +34,11 @@
   <script>
     const video = document.getElementById('introVideo');
 
-    // عند انتهاء الفيديو انتقل إلى index.html
     video.addEventListener('ended', () => {
-      window.location.href = "index.html";
+      // علامة أن الفيديو تم عرضه
+      localStorage.setItem('introPlayed', 'true');
+      // الانتقال للصفحة الرئيسية
+      window.location.href = 'index.html';
     });
   </script>
 </body>
