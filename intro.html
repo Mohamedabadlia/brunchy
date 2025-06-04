@@ -5,24 +5,20 @@
   <title>Intro Video</title>
   <style>
     html, body {
-      margin: 0; 
-      padding: 0; 
-      height: 100%; 
-      background: black;
+      margin: 0; padding: 0; height: 100%; background: black;
     }
     video {
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
   </style>
 </head>
 <body>
   <script>
-    // إذا سبق وشاهد المستخدم الفيديو، نوجهه مباشرة للصفحة الرئيسية
     if (localStorage.getItem('introPlayed') === 'true') {
+      alert("الفيديو تم تشغيله سابقًا، الانتقال الآن.");
       window.location.href = 'index.html';
+    } else {
+      alert("الفيديو لم يُشاهد من قبل، سيبدأ الآن.");
     }
   </script>
 
@@ -33,11 +29,9 @@
 
   <script>
     const video = document.getElementById('introVideo');
-
     video.addEventListener('ended', () => {
-      // علامة أن الفيديو تم عرضه
       localStorage.setItem('introPlayed', 'true');
-      // الانتقال للصفحة الرئيسية
+      alert("انتهى الفيديو، سيتم الانتقال.");
       window.location.href = 'index.html';
     });
   </script>
