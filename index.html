@@ -20,8 +20,10 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 </style><head><script>
-  // تحويل مباشر إلى intro.html عند كل تحميل index.html
-  window.location.href = "intro.html";
+  // التحقق إذا لم يشاهد المقدمة
+  if (!localStorage.getItem("hasSeenIntro")) {
+    window.location.href = "intro.html";
+  }
 </script>
   ...
   <style>
