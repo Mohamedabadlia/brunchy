@@ -2,38 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Intro Video</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brunchy Intro</title>
   <style>
+    * { margin: 0; padding: 0; }
     html, body {
-      margin: 0; padding: 0; height: 100%; background: black;
+      width: 100%;
+      height: 100%;
+      background: black;
+      overflow: hidden;
     }
     video {
-      width: 100%; height: 100%; object-fit: cover; display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <script>
-    if (localStorage.getItem('introPlayed') === 'true') {
-      alert("الفيديو تم تشغيله سابقًا، الانتقال الآن.");
-      window.location.href = 'index.html';
-    } else {
-      alert("الفيديو لم يُشاهد من قبل، سيبدأ الآن.");
-    }
-  </script>
-
   <video autoplay muted playsinline id="introVideo">
     <source src="intro.mp4" type="video/mp4" />
-    متصفحك لا يدعم عرض الفيديو.
+    Your browser does not support the video tag.
   </video>
 
   <script>
-    const video = document.getElementById('introVideo');
-    video.addEventListener('ended', () => {
-      localStorage.setItem('introPlayed', 'true');
-      alert("انتهى الفيديو، سيتم الانتقال.");
-      window.location.href = 'index.html';
-    });
+    const video = document.getElementById("introVideo");
+
+    // بعد انتهاء الفيديو
+    video.onended = function () {
+      // وضع علامة في LocalStorage
+      localStorage.setItem("hasSeenIntro", "true");
+      // التوجه إلى الصفحة الرئيسية
+      window.location.href = "index.html";
+    };
   </script>
 </body>
 </html>
