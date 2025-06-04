@@ -2,36 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brunchy Intro</title>
+  <title>Intro Video</title>
   <style>
-    /* نمط يجعل الفيديو يغطي الشاشة كاملة */
     html, body {
-      margin: 0; padding: 0;
-      width: 100%; height: 100%;
-      background-color: black;
-      overflow: hidden;
+      margin: 0; padding: 0; height: 100%; background: black;
     }
     video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+      width: 100%; height: 100%; object-fit: cover; display: block;
     }
   </style>
 </head>
 <body>
-  <video autoplay playsinline id="introVideo">
+  <video autoplay muted playsinline id="introVideo">
     <source src="intro.mp4" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
 
   <script>
     const video = document.getElementById('introVideo');
-
-    video.onended = function() {
+    video.addEventListener('ended', () => {
       window.location.href = "index.html";
-    };
+    });
   </script>
 </body>
 </html>
